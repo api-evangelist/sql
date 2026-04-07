@@ -1,13 +1,10 @@
 name: SQL
-description: SQL (Structured Query Language) is the standard programming language
-  for managing and querying relational databases. It provides commands for creating,
-  reading, updating, and deleting data, as well as defining schemas, managing permissions,
-  and performing complex analytical queries.
+description: SQL (Structured Query Language) is the standard programming language for managing and querying relational databases. It provides commands for creating, reading, updating, and deleting data, as well as defining schemas, managing permissions, and performing complex analytical queries.
 url: https://en.wikipedia.org/wiki/SQL
 tags:
-- Database
-- Query Language
-- Data Management
+  - Data Management
+  - Database
+  - Query Language
 created: '2025'
 modified: '2026-03-16'
 apis: []
