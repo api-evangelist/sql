@@ -1,0 +1,53 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "sql": "https://www.w3.org/ns/sql/",
+    "dcat": "https://www.w3.org/ns/dcat#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "SQLQuery": "sql:SQLQuery",
+    "SQLResult": "sql:SQLResult",
+    "SQLTable": "sql:SQLTable",
+    "SQLColumn": "sql:SQLColumn",
+    "SQLDatabase": "sql:SQLDatabase",
+    "SQLSchema": "sql:SQLSchema",
+    "Dataset": "dcat:Dataset",
+
+    "sql_statement": "sql:statement",
+    "parameters": {
+      "@id": "sql:hasParameter",
+      "@container": "@list"
+    },
+    "columns": {
+      "@id": "sql:hasColumn",
+      "@container": "@list"
+    },
+    "rows": {
+      "@id": "sql:hasRow",
+      "@container": "@list"
+    },
+    "rowCount": {
+      "@id": "sql:rowCount",
+      "@type": "xsd:integer"
+    },
+    "columnName": "sql:columnName",
+    "dataType": "sql:dataType",
+    "nullable": {
+      "@id": "sql:nullable",
+      "@type": "xsd:boolean"
+    },
+    "primaryKey": {
+      "@id": "sql:isPrimaryKey",
+      "@type": "xsd:boolean"
+    },
+    "tableName": "sql:tableName",
+    "schemaName": "sql:schemaName",
+    "databaseName": "sql:databaseName",
+    "name": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "identifier": "dcterms:identifier"
+  }
+}

@@ -1,0 +1,157 @@
+name: SQL Vocabulary
+description: >-
+  Normative vocabulary for SQL (Structured Query Language), the ANSI/ISO standard
+  language for relational database management, covering core language constructs,
+  data types, connectivity standards, and common database concepts.
+version: '1.0'
+created: '2026-05-02'
+modified: '2026-05-02'
+url: https://www.iso.org/standard/76583.html
+terms:
+  - term: SQL
+    definition: >-
+      Structured Query Language — the ANSI/ISO standard language for creating,
+      querying, updating, and managing relational databases. Current standard is
+      ISO/IEC 9075:2023 (SQL:2023).
+    tags:
+      - Core
+      - Standard
+  - term: SELECT
+    definition: >-
+      A SQL DML statement that retrieves rows from one or more tables based on
+      specified conditions, with optional sorting, grouping, and aggregation.
+    tags:
+      - DML
+      - Query
+  - term: INSERT
+    definition: >-
+      A SQL DML statement that adds new rows to a table. Supports inserting
+      single rows, multiple rows, or rows from a SELECT subquery.
+    tags:
+      - DML
+      - Write
+  - term: UPDATE
+    definition: >-
+      A SQL DML statement that modifies existing rows in a table, optionally
+      filtered by a WHERE clause.
+    tags:
+      - DML
+      - Write
+  - term: DELETE
+    definition: >-
+      A SQL DML statement that removes rows from a table, optionally filtered
+      by a WHERE clause.
+    tags:
+      - DML
+      - Write
+  - term: DDL
+    definition: >-
+      Data Definition Language — SQL statements that define or modify database
+      schema objects (CREATE, ALTER, DROP, TRUNCATE).
+    tags:
+      - DDL
+      - Schema
+  - term: DML
+    definition: >-
+      Data Manipulation Language — SQL statements that read or modify data
+      (SELECT, INSERT, UPDATE, DELETE, MERGE).
+    tags:
+      - DML
+      - Data
+  - term: Transaction
+    definition: >-
+      A sequence of SQL operations treated as a single logical unit of work,
+      governed by ACID properties. Delimited by BEGIN, COMMIT, and ROLLBACK.
+    tags:
+      - ACID
+      - Concurrency
+  - term: Primary Key
+    definition: >-
+      A column or set of columns that uniquely identifies each row in a table.
+      Primary keys must be unique and non-null, and are automatically indexed.
+    tags:
+      - Schema
+      - Constraint
+  - term: Foreign Key
+    definition: >-
+      A column that references the primary key of another table, enforcing
+      referential integrity between related tables.
+    tags:
+      - Schema
+      - Constraint
+      - Relationships
+  - term: Index
+    definition: >-
+      A database structure that improves the speed of data retrieval on a table
+      column or set of columns at the cost of additional storage and write overhead.
+    tags:
+      - Performance
+      - Schema
+  - term: JOIN
+    definition: >-
+      A SQL operation that combines rows from two or more tables based on a
+      related column. Types include INNER JOIN, LEFT OUTER JOIN, RIGHT OUTER JOIN,
+      FULL OUTER JOIN, and CROSS JOIN.
+    tags:
+      - Query
+      - Relationships
+  - term: Stored Procedure
+    definition: >-
+      A precompiled and named SQL program stored in the database that can be
+      called by client applications, supporting parameters and complex logic.
+    tags:
+      - Procedural SQL
+      - Performance
+  - term: View
+    definition: >-
+      A virtual table defined by a SQL SELECT query that simplifies complex
+      queries and can enforce data access restrictions.
+    tags:
+      - Schema
+      - Abstraction
+  - term: ODBC
+    definition: >-
+      Open Database Connectivity — a standard C-language API for accessing
+      ODBC-compliant databases regardless of the underlying DBMS.
+      Defined in ISO/IEC 9075-3 (SQL/CLI).
+    tags:
+      - Connectivity
+      - Standard
+      - API
+  - term: JDBC
+    definition: >-
+      Java Database Connectivity — the standard Java API for connecting
+      applications to SQL databases. Defined in JSR 221.
+    tags:
+      - Connectivity
+      - Java
+      - API
+  - term: SQLSTATE
+    definition: >-
+      A standardized five-character code returned by SQL operations to indicate
+      success or the type of error encountered. Defined in the SQL standard.
+    tags:
+      - Error Handling
+      - Standard
+  - term: NULL
+    definition: >-
+      A special marker in SQL indicating the absence of a value. NULL is not
+      equal to any value including itself; comparisons use IS NULL or IS NOT NULL.
+    tags:
+      - Data Types
+      - Core
+  - term: ACID
+    definition: >-
+      The four properties guaranteeing reliable transaction processing:
+      Atomicity (all-or-nothing), Consistency (valid state), Isolation
+      (independent execution), and Durability (committed = permanent).
+    tags:
+      - Transactions
+      - Reliability
+  - term: Parameterized Query
+    definition: >-
+      A SQL statement with placeholders (?, $1, :name) for input values,
+      preventing SQL injection by separating query structure from user data.
+    tags:
+      - Security
+      - Best Practice

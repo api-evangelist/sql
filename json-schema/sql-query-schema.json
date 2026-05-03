@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12",
+  "$id": "https://www.iso.org/schemas/sql-query",
+  "title": "SQL Query",
+  "description": "JSON Schema representing a SQL query request as used by SQL-over-HTTP APIs and database connectivity tools",
+  "type": "object",
+  "properties": {
+    "sql": {
+      "type": "string",
+      "description": "The SQL statement to execute",
+      "example": "SELECT id, name, email FROM users WHERE active = true ORDER BY name LIMIT 100"
+    },
+    "parameters": {
+      "type": "array",
+      "description": "Ordered list of parameter values for parameterized queries (? placeholders or $1, $2, etc.)",
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          { "type": "number" },
+          { "type": "boolean" },
+          { "type": "null" }
+        ]
+      },
+      "example": [true, 100]
+    },
+    "namedParameters": {
+      "type": "object",
+      "description": "Named parameter key/value pairs for named placeholder queries (:name or @name style)",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string" },
+          { "type": "number" },
+          { "type": "boolean" },
+          { "type": "null" }
+        ]
+      },
+      "example": { "active": true, "limit": 100 }
+    },
+    "maxRows": {
+      "type": "integer",
+      "description": "Maximum number of rows to return from a SELECT query",
+      "minimum": 1,
+      "example": 1000
+    },
+    "timeout": {
+      "type": "integer",
+      "description": "Query execution timeout in milliseconds",
+      "minimum": 0,
+      "example": 30000
+    },
+    "database": {
+      "type": "string",
+      "description": "Target database or schema name when the connection supports multiple",
+      "example": "production"
+    }
+  },
+  "required": ["sql"]
+}

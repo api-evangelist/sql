@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12",
+  "$id": "https://www.iso.org/schemas/sql-result",
+  "title": "SQL Query Result",
+  "description": "JSON Schema representing the result of a SQL query execution",
+  "type": "object",
+  "properties": {
+    "columns": {
+      "type": "array",
+      "description": "Column metadata for SELECT results",
+      "items": {
+        "$ref": "#/$defs/ColumnMetadata"
+      }
+    },
+    "rows": {
+      "type": "array",
+      "description": "Result rows as arrays of values matching the columns order",
+      "items": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "number" },
+            { "type": "boolean" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "example": [
+        [1, "Alice", "alice@example.com"],
+        [2, "Bob", "bob@example.com"]
+      ]
+    },
+    "rowsAsObjects": {
+      "type": "array",
+      "description": "Result rows as key/value objects using column names as keys",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "example": [
+        { "id": 1, "name": "Alice", "email": "alice@example.com" },
+        { "id": 2, "name": "Bob", "email": "bob@example.com" }
+      ]
+    },
+    "rowCount": {
+      "type": "integer",
+      "description": "Number of rows returned (SELECT) or affected (INSERT/UPDATE/DELETE)",
+      "minimum": 0,
+      "example": 2
+    },
+    "affectedRows": {
+      "type": "integer",
+      "description": "Number of rows modified by INSERT, UPDATE, or DELETE",
+      "minimum": 0,
+      "example": 1
+    },
+    "lastInsertId": {
+      "type": ["string", "integer", "null"],
+      "description": "Auto-generated ID of the last inserted row, if applicable",
+      "example": 42
+    },
+    "executionTime": {
+      "type": "number",
+      "description": "Query execution time in milliseconds",
+      "example": 12.5
+    },
+    "error": {
+      "$ref": "#/$defs/SQLError"
+    }
+  },
+  "$defs": {
+    "ColumnMetadata": {
+      "type": "object",
+      "description": "Metadata for a single result column",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Column name as returned by the database",
+          "example": "user_id"
+        },
+        "type": {
+          "type": "string",
+          "description": "SQL data type of the column",
+          "example": "INTEGER"
+        },
+        "nullable": {
+          "type": "boolean",
+          "description": "Whether the column allows NULL values",
+          "example": false
+        },
+        "primaryKey": {
+          "type": "boolean",
+          "description": "Whether this column is part of the primary key",
+          "example": true
+        }
+      },
+      "required": ["name"]
+    },
+    "SQLError": {
+      "type": "object",
+      "description": "SQL error information when a query fails",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "SQL error code (e.g., SQLSTATE)",
+          "example": "42P01"
+        },
+        "message": {
+          "type": "string",
+          "description": "Human-readable error message",
+          "example": "relation \"users\" does not exist"
+        },
+        "position": {
+          "type": "integer",
+          "description": "Character position in the SQL string where the error occurred"
+        }
+      },
+      "required": ["message"]
+    }
+  }
+}

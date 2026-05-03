@@ -1,0 +1,42 @@
+{
+  "name": "SQL Query",
+  "description": "Structure of a SQL query object as used in database API integrations",
+  "fields": [
+    {
+      "name": "sql",
+      "type": "string",
+      "required": true,
+      "description": "The SQL statement to execute (SELECT, INSERT, UPDATE, DELETE, DDL)"
+    },
+    {
+      "name": "parameters",
+      "type": "array",
+      "required": false,
+      "description": "Ordered positional parameters for ? or $1 style parameterized queries"
+    },
+    {
+      "name": "namedParameters",
+      "type": "object",
+      "required": false,
+      "description": "Named parameters for :name or @name style parameterized queries"
+    },
+    {
+      "name": "maxRows",
+      "type": "integer",
+      "required": false,
+      "description": "Maximum rows to return (acts as LIMIT if not specified in SQL)"
+    },
+    {
+      "name": "timeout",
+      "type": "integer",
+      "required": false,
+      "description": "Query execution timeout in milliseconds"
+    },
+    {
+      "name": "database",
+      "type": "string",
+      "required": false,
+      "description": "Target database/schema name for multi-database connections"
+    }
+  ]
+}
