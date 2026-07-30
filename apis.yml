@@ -9,6 +9,18 @@ description: >-
   enabling applications to connect to and interact with SQL-compliant databases.
   Major implementations include MySQL, PostgreSQL, Microsoft SQL Server, Oracle,
   SQLite, and many others.
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png
 url: https://www.iso.org/standard/76583.html
 created: '2026-05-02'
