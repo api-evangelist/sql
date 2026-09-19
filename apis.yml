@@ -50,6 +50,10 @@ apis:
     tags:
       - Database Connectivity
       - ODBC
+      - Standards
+    tags_raw:
+      - Database Connectivity
+      - ODBC
       - Standard
     properties:
       - type: Documentation
@@ -68,6 +72,11 @@ apis:
     humanUrl: https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/package-summary.html
     baseUrl: ''
     tags:
+      - Database Connectivity
+      - Java
+      - JDBC
+      - Standards
+    tags_raw:
       - Database Connectivity
       - Java
       - JDBC
