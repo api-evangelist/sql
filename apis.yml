@@ -89,6 +89,12 @@ apis:
       - type: Specification
         url: https://jcp.org/en/jsr/detail?id=221
 common:
+  - type: Plans
+    url: plans/sql-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/sql-rate-limits.yml
+  - type: FinOps
+    url: finops/sql-finops.yml
   - type: JSONSchema
     url: json-schema/sql-query-schema.json
   - type: JSONSchema
